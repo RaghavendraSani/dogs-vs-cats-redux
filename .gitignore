@@ -1,0 +1,48 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+*.egg-info/
+build/
+dist/
+
+# Logs
+logs/
+runs/
+
+# Outputs
+outputs/
+
+# Model checkpoints
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Dataset
+data/raw/
+data/processed/
+
+# Kaggle submissions (optional)
+# data/submissions/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Cache
+.cache/
