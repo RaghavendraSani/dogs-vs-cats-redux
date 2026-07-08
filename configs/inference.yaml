@@ -1,0 +1,22 @@
+# ==========================
+# Inference Configuration
+# ==========================
+
+inference:
+  batch_size: 64
+  num_workers: 4
+  pin_memory: true
+
+model:
+  checkpoint: best
+
+prediction:
+  activation: sigmoid
+
+tta:
+  enabled: false
+  horizontal_flip: true
+  num_passes: 2
+
+submission:
+  filename: submission.csv

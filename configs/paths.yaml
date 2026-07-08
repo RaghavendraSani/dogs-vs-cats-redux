@@ -1,0 +1,24 @@
+# ==========================
+# Project Paths
+# ==========================
+
+project:
+  root: .
+
+data:
+  raw: data/raw
+  processed: data/processed
+  submissions: data/submissions
+
+dataset:
+  train_dir: data/raw/train
+  test_dir: data/raw/test
+
+checkpoints:
+  dir: checkpoints
+
+logs:
+  dir: logs
+
+outputs:
+  dir: outputs

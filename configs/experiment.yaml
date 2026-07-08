@@ -1,0 +1,16 @@
+# ==========================
+# Experiment Configuration
+# ==========================
+
+experiment:
+  name: efficientnetv2_baseline
+  description: Baseline EfficientNetV2-S model for Dogs vs Cats Redux
+  version: v1
+
+tracking:
+  save_logs: true
+  save_checkpoints: true
+  save_outputs: true
+
+reproducibility:
+  save_config_copy: true

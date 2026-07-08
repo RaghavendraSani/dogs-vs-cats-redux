@@ -1,0 +1,37 @@
+# ==========================
+# Training Configuration
+# ==========================
+
+training:
+  epochs: 30
+  device: cuda
+  mixed_precision: true
+  deterministic: false
+  seed: 42
+
+optimizer:
+  name: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.0001
+
+scheduler:
+  name: OneCycleLR
+  max_lr: 0.001
+  pct_start: 0.30
+
+loss:
+  name: BCEWithLogitsLoss
+
+early_stopping:
+  enabled: true
+  patience: 5
+  monitor: val_loss
+
+checkpoint:
+  save_best_only: true
+  monitor: val_loss
+  save_last: true
+
+gradient_clipping:
+  enabled: true
+  max_norm: 1.0

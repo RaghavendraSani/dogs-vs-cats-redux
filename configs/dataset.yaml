@@ -1,0 +1,21 @@
+# ==========================
+# Dataset Configuration
+# ==========================
+
+dataset:
+  image_size: 224
+  channels: 3
+
+dataloader:
+  batch_size: 32
+  num_workers: 4
+  pin_memory: true
+  persistent_workers: true
+  shuffle: true
+
+split:
+  validation_size: 0.20
+  random_seed: 42
+
+performance:
+  prefetch_factor: 2

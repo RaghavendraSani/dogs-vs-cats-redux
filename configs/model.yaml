@@ -1,0 +1,13 @@
+# ==========================
+# Model Configuration
+# ==========================
+
+model:
+  name: efficientnet_v2_s
+  pretrained: true
+  num_classes: 1
+  fine_tune:
+  compile: false
+
+classifier:
+  dropout: 0.2
