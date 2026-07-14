@@ -78,6 +78,7 @@ class ConfigLoader:
         for file in self.CONFIG_FILES:
             yaml_data = self.load_yaml(file)
             config = self.deep_merge(config, yaml_data)
+        self.validate(config)
         return ConfigNode(config)
 
 
