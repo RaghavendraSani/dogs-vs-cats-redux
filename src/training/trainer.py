@@ -46,6 +46,11 @@ class Trainer:
             self.scaler.update()
             self.scheduler.step()
             running_loss += loss.item()
+            if batch_idx % 50 == 0:
+                print(
+                    f"Batch [{batch_idx}/{len(self.train_loader)}] "
+                    f"Loss: {loss.item():.5f}"
+                )
 
         return running_loss / len(self.train_loader)
 

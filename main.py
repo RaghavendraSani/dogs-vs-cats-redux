@@ -70,6 +70,7 @@ if __name__ == "__main__":
     main()
 """
 
+"""
 from src.models.model import DogsVsCatsModel
 from src.training.dataloader import create_dataloaders
 from src.training.trainer import Trainer
@@ -85,6 +86,15 @@ def main():
         learning_rate=1e-4,
     )
     trainer.train()
+
+if __name__ == "__main__":
+    main()
+"""
+
+from src.inference.predict import predict
+
+def main():
+    predict()
 
 if __name__ == "__main__":
     main()

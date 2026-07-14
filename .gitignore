@@ -37,6 +37,7 @@ checkpoints/
 # Dataset
 data/raw/
 data/processed/
+data/submissions
 
 # Kaggle submissions (optional)
 # data/submissions/
