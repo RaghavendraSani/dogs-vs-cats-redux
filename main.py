@@ -53,23 +53,38 @@ print("Device:", device)
 print("Output Shape:", output.shape)
 """
 
+"""
 from src.training.dataloader import create_dataloaders
 
-
 def main():
-
     train_loader, valid_loader = create_dataloaders(batch_size=32)
-
     print("Train batches:", len(train_loader))
     print("Validation batches:", len(valid_loader))
-
     images, labels = next(iter(train_loader))
-
     print("Image Batch Shape:", images.shape)
     print("Label Batch Shape:", labels.shape)
     print("Image dtype:", images.dtype)
     print("Label dtype:", labels.dtype)
+    
+if __name__ == "__main__":
+    main()
+"""
 
+from src.models.model import DogsVsCatsModel
+from src.training.dataloader import create_dataloaders
+from src.training.trainer import Trainer
+
+def main():
+    train_loader, valid_loader = create_dataloaders(batch_size=32)
+    model = DogsVsCatsModel()
+    trainer = Trainer(
+        model=model,
+        train_loader=train_loader,
+        valid_loader=valid_loader,
+        epochs=30,
+        learning_rate=1e-4,
+    )
+    trainer.train()
 
 if __name__ == "__main__":
     main()
