@@ -23,6 +23,7 @@ print("Image Size:", image.size)
 print("Label:", label)
 """
 
+"""
 from pathlib import Path
 from src.datasets.dataset import DogsVsCatsDataset
 from src.datasets.transforms import train_transform
@@ -37,3 +38,38 @@ image, label = dataset[0]
 print("Image Shape:", image.shape)
 print("Image Type:", image.dtype)
 print("Label:", label)
+"""
+
+"""
+import torch
+from src.models.model import DogsVsCatsModel
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = DogsVsCatsModel().to(device)
+dummy = torch.randn(1, 3, 224, 224).to(device)
+with torch.no_grad():
+    output = model(dummy)
+print("Device:", device)
+print("Output Shape:", output.shape)
+"""
+
+from src.training.dataloader import create_dataloaders
+
+
+def main():
+
+    train_loader, valid_loader = create_dataloaders(batch_size=32)
+
+    print("Train batches:", len(train_loader))
+    print("Validation batches:", len(valid_loader))
+
+    images, labels = next(iter(train_loader))
+
+    print("Image Batch Shape:", images.shape)
+    print("Label Batch Shape:", labels.shape)
+    print("Image dtype:", images.dtype)
+    print("Label dtype:", labels.dtype)
+
+
+if __name__ == "__main__":
+    main()
